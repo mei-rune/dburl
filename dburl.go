@@ -67,6 +67,9 @@ func Parse(urlstr string) (*URL, error) {
 	if err != nil {
 		return nil, err
 	}
+	return ParseWith(v)
+}
+func ParseWith(v *url.URL) (*URL, error) {
 	if v.Scheme == "" {
 		return nil, ErrInvalidDatabaseScheme
 	}
